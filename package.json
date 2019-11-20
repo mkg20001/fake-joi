@@ -1,6 +1,6 @@
 {
   "name": "fake-joi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Create a Joi schema as string",
   "main": "index.js",
   "author": "Maciej Krüger <mkg20001@gmail.com>",
