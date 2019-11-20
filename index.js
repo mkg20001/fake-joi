@@ -4,7 +4,7 @@ function strfy (a) {
   if (a._) return a._
 
   if (Array.isArray(a)) {
-    return `[${a.map(a => strfy(a)).join(',')}]`
+    return `[${a.map(a => strfy(a)).join(', ')}]`
   }
 
   if (typeof a === 'object') {
@@ -21,7 +21,7 @@ function fakeJoi () {
     get: (obj, key) => {
       if (key === '_') {
         return actual
-      } else {
+      } else if (typeof key === 'string') {
         return (...a) => {
           actual += `.${key}(${a.map(a => strfy(a)).join(', ')})`
 
@@ -44,5 +44,4 @@ function fakeJoiWrapper () {
   })
 }
 
-module.exports = fakeJoiWrapper
-
+module.exports = fakeJoiWrapper()

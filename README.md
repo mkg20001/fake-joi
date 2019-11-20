@@ -11,4 +11,5 @@ const schema = Joi.object({
 })
 
 console.log(schema._) // returns schema as string
+// Joi.object({"someKey": Joi.number().integer().required()})
 ```
